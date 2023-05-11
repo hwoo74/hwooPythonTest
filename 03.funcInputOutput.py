@@ -1,4 +1,4 @@
-basemulti =2
+basemulti = 2
 def multifunc( multiple, *args ):
     global basemulti    #함수 내부에서 global 접근 가능.
     if multiple <= 0 :
@@ -15,7 +15,7 @@ def checkNum ( var ) :
         var = var[1:]
     if '.' in var :
         var.replace('.','')
-    return var.isdigit();
+    return var.isdigit()
 
 
 ### input 그리고 함수 테스트.
@@ -23,6 +23,7 @@ lst1 = [ -1, 0, 1, 2, 3 ]
 #print( multifunc(3,lst1) )         # 안된다 ...   함수내 vars 값이 ([ -1, 0, 1, 2,3 ]) 이 됨... tuple로 자동변환 되므로 ...
 one, two, three, four, five = lst1  # 사용하고 싶다면 분해해서 대입할것.
 print( multifunc(-3, one, two, three, four, five) )  # 이렇게 해야 돌아감.. 즉, 변수의 나열이지 list 나 tuple을 받을 순 없음.
+print( multifunc(3, *lst1) )       # 아님 이렇게 넣던지 ...
 
 # 키보드 입력을 받아서 lambda로 돌리자
 inNum = input("숫자 입력 요망 :")     # 무조건 str로 받음.

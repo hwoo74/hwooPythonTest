@@ -35,3 +35,7 @@ import statistics   # 평균, 중간값 연산용.
 lala = [ 13, 13,44,23, 83, 92,48,77 ]
 print( '평균값', statistics.mean(lala) )
 print( '중간값', statistics.median(lala) )    # 짝수일때는 중간값 2개를 구한다음에 평균으로 줌.
+
+
+# import numpy as np
+# 대규모 수학 연산용 .... 머신러닝에 필요 ...

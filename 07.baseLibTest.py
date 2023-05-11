@@ -44,3 +44,11 @@ mybook3 = Book("hellohello", 27000)
 print( mybook3 )
 print(mybook3.title)
 print(mybook3.price)
+
+#import webbrowser
+#webbrowser.open_new('http://python.org')
+# 브라우저 에서 웹 사이트 띄워줌 ...
+
+import uuid
+print('uuid 1 - ', uuid.uuid1())
+print('uuid 4 - ', uuid.uuid4())

@@ -17,6 +17,8 @@ for i in range(5):
     t.start()   # 바로 실행시키고 ... 나중에 실행 시킬꺼면 밑에 루틴으로 ...
     threads.append(t)
 
+print('thread list is', threads)
+
 #for t in threads:  # 나중에 실행시킬꺼면 주석 풀것 ..
 #    t.start()
 

@@ -79,7 +79,7 @@ import pprint
 Faker = faker.Faker('ko-KR')
 
 orgData = [ { 'name' : Faker.name(), 'address' : Faker.address() } for i in range(5) ]
-#print( orgData )
+print( '- pickle 로 처리 -')
 with open('./data.p', 'wb') as pkfile:
     pickle.dump(orgData, pkfile)
 with open('./data.p', 'rb') as pkfile:
@@ -87,10 +87,9 @@ with open('./data.p', 'rb') as pkfile:
 pprint.pprint( readData )
 
 import json
+print( '- json으로 처리 -')
 with open('./data.json', 'wt') as jsonfile:
     json.dump(orgData, jsonfile)
 with open('./data.json', 'rt') as jsonfile:
     readData = json.load(jsonfile)
-
-
 pprint.pprint( readData )

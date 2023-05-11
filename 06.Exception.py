@@ -1,3 +1,7 @@
+import traceback
+# Exception 발생시 정확한 위치를 추적한다.
+# print(traceback.format_exc())
+
 class MyException(Exception):   # 오류 지정, 반드시 Exception 상속필요.
     def __init__(self, code, msg):      # 초기화
         self.code = code
@@ -15,7 +19,11 @@ except MyException as err:  # 정의된 오류의 경우 err로 __str__함수값
 except Exception as err:                     # 정의되지 않은 오류.
     print('exception occurred.')
     print( err )
-    #print( type(err) )                      # <class 'ValueError'>
+    print( type(err) )                      # <class 'ValueError'>
+    # Exception 발생시 정확한 위치를 추적한다.
+    print( '-'*10)
+    print(traceback.format_exc())
+    print('-' * 10)
 else:
     invarOrg = "Input Number is %d" % invar     # 오류 없으면 실행.
 finally:                                        # 항상 실행.

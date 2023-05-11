@@ -23,7 +23,6 @@ class DbMysql:
                 return True
         except :
             pass
-
         return False
     def getAllData(self):
         return self.cur.fetchall()
