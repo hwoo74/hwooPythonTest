@@ -54,8 +54,9 @@ if __name__ == '__main__':
     strikers.init()
     while True:
         getStr = input('input num3 : ')
+        count = strikers.getCount()
         strike, ball, out = strikers.check(getStr)
-        print( 'Strike :', strike, ' Ball :', ball, ' Out :', out, ' Count :', strikers.getCount() )
+        print( 'Strike :', strike, ' Ball :', ball, ' Out :', out, ' Count :', count )
         if strike == 3:
             break
     print('fin')

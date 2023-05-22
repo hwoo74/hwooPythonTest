@@ -88,11 +88,11 @@ print( 'Train Loss for LinearRegression model : %.4f' % train_loss )
 #exit(1)
 
 nums = 8
-epochs_list = [round(epochs / (nums-1) * n) for n in range(nums)]
+epochs_list = [round(epochs / (nums-1) * n - 1) for n in range(nums)]
+    # - 1 해준 이유는 epochs 의 범위만큼뽑으면 아래 코드에서 index로 찾을때 최대값이 들어가서 오류가 난다...
+    # epochs_list = [round(epochs / (nums-1) * n ) for n in range(nums)]
+    # 위에처럼 하면 밑에 epoch = epochs_list[i] 여기서 오류남 ....
 print(epochs_list)
-#epochs_list = [round(epochs / (nums-1) * n + 1) for n in range(nums)]
-#print(epochs_list)
-#exit(1)
 
 fig3 = plt.figure(3)    # UI를 분리시킵니다.
 
@@ -101,13 +101,9 @@ for i in range(len(epochs_list)) :
     plt.scatter(x_train, y_train )  # scatter the original data
 
     # Load trained weights in specific epoch
-    #print(i)
-    #print(epochs_list[i])
-    epoch = epochs_list[i] - 1  # in python, all indexes start from 0
-                                # ???? why -1 ???
+    print(i)
+    epoch = epochs_list[i]      # pick list.
 
-    #print(epoch)
-    #print("~", i)
     w = w_list[epoch]
     b = b_list[epoch]
 
@@ -118,8 +114,9 @@ for i in range(len(epochs_list)) :
     y_pred = w * x_train + b
 
     plt.plot(x_train, y_pred, color="red")
-    plt.show()
+    #plt.show()
 
+plt.show()
 plt.plot(loss_list)
 plt.show()
 
