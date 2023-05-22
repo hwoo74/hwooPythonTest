@@ -38,8 +38,36 @@
         .     ..    .venv
         ```
     - pycharm 에디터에서는 자동으로 실행해 주는듯. 
-    - git 에 포함되어야 함.
+    - git 에 포함되어야 설치 라이브러리가 뭔지 알 수 있음 ... 허나, 개별 pc 설정이라 .. 다운받아도 안먹힐 수 있음 ... 
+    - 따라서, 해당 venv 보단... requirements.txt 파일에 라이브러리를 공유하는 방식을 씀.
 
 5. .idea 폴더
     - https://wotres.tistory.com/entry/idea-%ED%8F%B4%EB%8D%94%EB%9E%80-gitignore-%EC%B6%94%EA%B0%80%ED%95%98%EB%8A%94-%EC%9D%B4%EC%9C%A0
     - 프로젝트별 설정값 저장. .gitignore 에 추가해 둬야 함.
+
+6. package 설치 방법 ....
+    - pip 으로 관리. 
+        - PyPI - 파이선 패키지 등록 싸이트. https://pypi.org/
+        - pip help
+            - 설치확인/ 도움말/ 
+            - 최신버전은 pip도 자동 설치됨.
+    - package install example 
+        - pypi 사이트에서 bubblesort 검색해서 찾아봄 ... 
+        ```
+        prompt> pip install bubblesort
+        Collecting bubblesort
+        Downloading bubbleSort-0.1.0-py3-none-any.whl (1.3 kB)
+        Installing collected packages: bubblesort
+        Successfully installed bubblesort-0.1.0
+
+        [notice] A new release of pip available: 22.3.1 -> 23.1.1
+        [notice] To update, run: python.exe -m pip install --upgrade pip
+        ```
+        - 사용법을 모르니 venv\Lib\...\__init__.py 를 열어봄.
+    - 패키지 배포...
+        - https://velog.io/@devmin/python-freeze-packages-tip
+        - pip freeze > requirements.txt
+            - 해당 명령어로 .. 패키지를 백업해 두고, 
+        - pip install -r requirements.txt
+            - 이걸로 복구 (r 은 read 약자)
+        - 멀쩡하게 설치된 라이브러리를 못찾을때, 이방식으로 pyCharm 에서 업데이트 하니 돌아간다 ..... 

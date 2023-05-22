@@ -17,7 +17,7 @@ plt.title('All data')
 #plt.show()
 
 
-# 해당 이슈를 사이킷 런을 통하여 풀어보는 방법... 
+# 해당 이슈를 사이킷 런을 통하여 풀어보는 방법...
 from sklearn.model_selection import train_test_split
 
 x_train, x_test, y_train, y_test = train_test_split( x, y, test_size=0.25, random_state=42 )
